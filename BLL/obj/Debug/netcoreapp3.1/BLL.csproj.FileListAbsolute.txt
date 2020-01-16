@@ -1,0 +1,8 @@
+C:\epam_lab\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+C:\epam_lab\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+C:\epam_lab\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+C:\epam_lab\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+C:\epam_lab\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+C:\epam_lab\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+C:\epam_lab\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+C:\epam_lab\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
