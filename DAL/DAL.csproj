@@ -5,16 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200116055800_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200116055800_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200116131736_SecondCommit.cs" />
+    <Compile Remove="Migrations\20200116131736_SecondCommit.Designer.cs" />
+    <Compile Remove="Migrations\20200116133205_SecondMigration.cs" />
+    <Compile Remove="Migrations\20200116133205_SecondMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200120171151_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200120171151_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200120171552_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200120171552_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200120173950_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200120173950_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200120175702_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200120175702_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

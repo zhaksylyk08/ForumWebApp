@@ -8,19 +8,18 @@ namespace DAL.Models
     public class Post : BaseModel
     {
         [Required]
-        [StringLength(100)]
+        [StringLength(100, MinimumLength = 3)]
         public string Title { get; set; }
 
         [Required]
         [StringLength(1000)]
         public string Content { get; set; }
 
-        public int Views { get; set; }
+        public int Views { get; set; } = 0;
 
-        public int Votes { get; set; }
+        public int Votes { get; set; } = 0;
 
-        [Required]
-        public string AuthorId { get; set; }
+        public int AuthorId { get; set; }
         public User Author { get; set; }
 
         public ICollection<Comment> Comments { get; set; }

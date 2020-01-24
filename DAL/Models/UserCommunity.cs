@@ -6,7 +6,7 @@ namespace DAL.Models
 {
     public class UserCommunity
     {
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
 
         public int CommunityId { get; set; }

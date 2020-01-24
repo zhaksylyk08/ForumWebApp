@@ -14,7 +14,7 @@ namespace DAL.Models
         public int PostId { get; set; }
         public Post Post { get; set; }
 
-        public string AuthorId { get; set; }
+        public int AuthorId { get; set; }
         public User Author { get; set; }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\epam_lab\\ForumProject\\ForumProject.csproj": {}
+    "C:\\epam_lab\\ForumWebApp\\ForumProject\\ForumProject.csproj": {}
   },
   "projects": {
-    "C:\\epam_lab\\DAL\\DAL.csproj": {
+    "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\epam_lab\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\epam_lab\\DAL\\DAL.csproj",
+        "projectPath": "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Yadro\\.nuget\\packages\\",
-        "outputPath": "C:\\epam_lab\\DAL\\obj\\",
+        "outputPath": "C:\\epam_lab\\ForumWebApp\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\epam_lab\\ForumProject\\ForumProject.csproj": {
+    "C:\\epam_lab\\ForumWebApp\\ForumProject\\ForumProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\epam_lab\\ForumProject\\ForumProject.csproj",
+        "projectUniqueName": "C:\\epam_lab\\ForumWebApp\\ForumProject\\ForumProject.csproj",
         "projectName": "ForumProject",
-        "projectPath": "C:\\epam_lab\\ForumProject\\ForumProject.csproj",
+        "projectPath": "C:\\epam_lab\\ForumWebApp\\ForumProject\\ForumProject.csproj",
         "packagesPath": "C:\\Users\\Yadro\\.nuget\\packages\\",
-        "outputPath": "C:\\epam_lab\\ForumProject\\obj\\",
+        "outputPath": "C:\\epam_lab\\ForumWebApp\\ForumProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -101,8 +101,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\epam_lab\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\epam_lab\\DAL\\DAL.csproj"
+              "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj"
               }
             }
           }
@@ -116,7 +116,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.1, )"
             },
@@ -129,6 +133,14 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.0, )"
             }
           },
           "imports": [

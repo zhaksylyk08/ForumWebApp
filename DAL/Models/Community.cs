@@ -11,7 +11,7 @@ namespace DAL.Models
         [StringLength(100)]
         public string Description { get; set; }
         
-        public string CreatorId { get; set; }
+        public int? CreatorId { get; set; }
         public User Creator { get; set; }
 
         public virtual ICollection<UserCommunity> Members { get; set; }

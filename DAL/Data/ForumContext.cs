@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DAL.Data
 {
-    public class ForumContext : IdentityDbContext<User>
+    public class ForumContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
         public ForumContext(DbContextOptions<ForumContext> options)
             : base(options)
@@ -27,7 +27,8 @@ namespace DAL.Data
             modelBuilder.Entity<User>()
                 .HasMany<Post>(u => u.Posts)
                 .WithOne(p => p.Author)
-                .HasForeignKey(p => p.AuthorId);
+                .HasForeignKey(p => p.AuthorId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Post>()
                 .HasMany<Comment>(p => p.Comments)
@@ -44,17 +45,20 @@ namespace DAL.Data
             modelBuilder.Entity<UserCommunity>()
                 .HasOne<User>(uc => uc.User)
                 .WithMany(u => u.SubscribedCommunities)
-                .HasForeignKey(uc => uc.UserId);
+                .HasForeignKey(uc => uc.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<UserCommunity>()
                 .HasOne<Community>(uc => uc.Community)
                 .WithMany(u => u.Members)
-                .HasForeignKey(uc => uc.CommunityId);
+                .HasForeignKey(uc => uc.CommunityId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Community>()
                 .HasMany<Post>(c => c.Posts)
                 .WithOne(p => p.Community)
-                .HasForeignKey(p => p.CommunityId);
+                .HasForeignKey(p => p.CommunityId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Category>()
                 .HasMany<Community>(category => category.Communities)

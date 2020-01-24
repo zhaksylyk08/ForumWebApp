@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\epam_lab\\DAL\\DAL.csproj": {}
+    "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "C:\\epam_lab\\DAL\\DAL.csproj": {
+    "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\epam_lab\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\epam_lab\\DAL\\DAL.csproj",
+        "projectPath": "C:\\epam_lab\\ForumWebApp\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Yadro\\.nuget\\packages\\",
-        "outputPath": "C:\\epam_lab\\DAL\\obj\\",
+        "outputPath": "C:\\epam_lab\\ForumWebApp\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
