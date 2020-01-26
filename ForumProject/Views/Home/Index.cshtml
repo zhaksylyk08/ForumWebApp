@@ -1,2 +1,18 @@
-﻿
-<h2>New Posts</h2>
+﻿@model ForumProject.ViewModels.HomeIndexViewModel
+
+<h2>Posts</h2>
+
+<div class="list-group">
+    @foreach (var post in Model.Posts)
+    {
+        <a class="list-group-item list-group-item-action" asp-controller="Post" asp-action="Details" asp-route-id="@post.Id">
+            <h2 style="color:cornflowerblue;">@post.Title</h2>
+            <p>Posted by @post.AuthorName on @post.Created</p>
+            <p>@post.Community.Title</p>
+            <p>@post.Views views</p>
+            <p>@post.Score scores</p>
+            <p>@post.CommentsCount</p>
+        </a>
+    }
+</div>
+

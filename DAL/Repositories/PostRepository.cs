@@ -26,7 +26,12 @@ namespace DAL.Repositories
 
         public IEnumerable<Post> GetAll()
         {
-            var result = _context.Posts.ToList();
+            var result = _context.Posts
+                .Include(p => p.Community)
+                .Include(p => p.Author)
+                .Include(p => p.Comments)
+                .ToList();
+
             return result;
         }
 
