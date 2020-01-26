@@ -117,7 +117,7 @@ namespace ForumProject.Controllers
         public IActionResult Details(int id)
         {
             var community = _communityService.GetById(id);
-            var posts = _postService.GetPostsByCommunity(id);
+            var posts = _postService.GetPostsByCommunity(community.Id);
 
             var communityViewModel = new CommunityViewModel
             {

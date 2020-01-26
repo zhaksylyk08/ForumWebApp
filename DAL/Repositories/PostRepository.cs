@@ -44,7 +44,7 @@ namespace DAL.Repositories
 
         public IEnumerable<Post> GetPostsByCommunity(int id)
         {
-            var result = _context.Posts.Where(p => p.Id == id).ToList();
+            var result = _context.Posts.Where(p => p.CommunityId == id).ToList();
             return result;
         }
     }

@@ -2,25 +2,26 @@
 
 <h1>Welcome to the @Model.Community.Title!</h1>
 
-<div>
+<a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Community.Id" class="btn btn-info">
+    Create the post
+</a>
+
+<div class="list-group">
     @if (@Model.Posts.Any())
     {
-       @foreach (var post in Model.Posts)
-       {
-           <a class="list-group-item list-group-item-action" asp-controller="Post" asp-action="Details" asp-route-id="@post.Id">
-               <h2 style="color:cornflowerblue;">@post.Title</h2>
-               <p>Posted by @post.AuthorName on @post.Created</p>
-               <p>@post.Views views</p>
-               <p>@post.Score scores</p>
-               <p>@post.CommentsCount</p>
+        @foreach (var post in Model.Posts)
+        {
+            <a class="list-group-item list-group-item-action" asp-controller="Post" asp-action="Details" asp-route-id="@post.Id">
+                <h2 style="color:cornflowerblue;">@post.Title</h2>
+                <p>Posted by @post.AuthorName on @post.Created</p>
+                <p>@post.Views views</p>
+                <p>@post.Score scores</p>
+                <p>@post.CommentsCount</p>
             </a>
-       }
+        }
     }
     else
     {
         <h3>There are no posts yet!</h3>
-        <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Community.Id">
-            Create the post
-        </a>
     }
 </div>

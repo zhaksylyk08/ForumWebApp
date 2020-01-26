@@ -240,3 +240,5 @@ C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\Microsoft.Extension
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\ForumProject.MvcApplicationPartsAssemblyInfo.cache
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Community\Details.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Post\Create.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Post\Details.cshtml.g.cs
