@@ -1,0 +1,22 @@
+﻿@model ForumProject.ViewModels.CommunityIndexViewModel
+
+<div class="list-group float-left" style="width: 200px; margin-top: 20px;">
+    @foreach (var category in Model.Categories)
+    {
+        <a asp-controller="Community" asp-action="Index" asp-route-id="@category.Id" class="list-group-item list-group-item-action">
+            @category.Name
+        </a>
+    }
+</div>
+
+<div class="list-group" align ="center" style="width:300px; margin-top: 30px; margin-right: 40px;">
+    @foreach (var community in Model.Communities)
+    {
+        <a class="list-group-item list-group-item-action" asp-controller="Community" asp-action="Details" asp-route-id="@community.Id">
+            <span>
+                <img src="@Url.Content("~/images/communities/")/@community.PhotoPath" class="rounded float-left" width="60" height="60"/>
+            </span>
+            <h5>@community.Title</h5>
+        </a>
+    }
+</div>

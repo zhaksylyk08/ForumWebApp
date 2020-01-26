@@ -5,8 +5,12 @@ using DAL.Models;
 
 namespace DAL.Interfaces
 {
-    public interface IPostRepository : IRepository<Post>
+    public interface IPostRepository
     {
+        IEnumerable<Post> GetAll();
+        Post GetById(int id);
+        void Add(Post post);
 
+        IEnumerable<Post> GetPostsByCommunity(int id);
     }
 }

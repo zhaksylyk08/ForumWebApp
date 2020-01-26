@@ -45,9 +45,21 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "Microsoft.AspNetCore.Hosting": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             }
           },
           "imports": [

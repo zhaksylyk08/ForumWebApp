@@ -5,8 +5,10 @@ using DAL.Models;
 
 namespace DAL.Interfaces
 {
-    public interface ICategoryRepository : IRepository<Category>
+    public interface ICategoryRepository
     {
-        
+        IEnumerable<Category> GetAll();
+        Category GetById(int id);
+        void Add(Category category);
     }
 }

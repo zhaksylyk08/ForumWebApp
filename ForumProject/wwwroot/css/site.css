@@ -11,13 +11,24 @@ a.navbar-brand {
 }
 
 .container .nav-item:hover {
-    background-color: #ed8bf8!important;
+    background-color: #ffffff!important;
     cursor: pointer;
 }
 
-/* Provide sufficient contrast against white background */
+.container .nav-item a {
+    color: white!important;
+}
+
+.container .nav-item a:hover{
+    color: #ed8bf8!important;
+}
+
 a {
-    color: #ed8bf8!important    ;
+    color: #000000;
+}
+/* Provide sufficient contrast against white background */
+a:hover {
+    color: #ed8bf8;
 }
 
 .btn-primary {

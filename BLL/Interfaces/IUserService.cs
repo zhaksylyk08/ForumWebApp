@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BLL.Interfaces
 {
-    interface IUserService
+    public interface IUserService
     {
+        bool VerifyUserName();
     }
 }

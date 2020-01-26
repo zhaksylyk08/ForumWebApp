@@ -7,9 +7,9 @@ using DAL.Interfaces;
 
 namespace DAL.Repositories
 {
-    public class CommentRepository : Repository<Comment>, ICommentRepository
+    public class CommentRepository : ICommentRepository
     {
-        public CommentRepository(ForumContext context) : base(context)
+        public CommentRepository(ForumContext context)
         {
 
         }

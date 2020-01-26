@@ -10,6 +10,12 @@ namespace DAL.Models
         [Required]
         [StringLength(100)]
         public string Description { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string Title { get; set; }
+
+        public string PhotoPath { get; set; }
         
         public int? CreatorId { get; set; }
         public User Creator { get; set; }

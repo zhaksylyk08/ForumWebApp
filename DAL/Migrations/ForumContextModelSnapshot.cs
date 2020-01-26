@@ -90,6 +90,14 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<DateTime>("Updated")
                         .HasColumnType("datetime2");
 
@@ -123,6 +131,9 @@ namespace DAL.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -132,9 +143,6 @@ namespace DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Views")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Votes")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

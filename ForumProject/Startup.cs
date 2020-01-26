@@ -15,6 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BLL.Interfaces;
+using BLL.Services;
 
 namespace ForumProject
 {
@@ -36,12 +38,15 @@ namespace ForumProject
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ForumContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ICommunityRepository, CommunityRepository>();
             services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<ICommunityService, CommunityService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IPostService, PostService>();
 
             services.AddIdentity<User, IdentityRole<int>>(opts =>
             {

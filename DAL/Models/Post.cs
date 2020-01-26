@@ -17,7 +17,7 @@ namespace DAL.Models
 
         public int Views { get; set; } = 0;
 
-        public int Votes { get; set; } = 0;
+        public int Score { get; set; } = 0;
 
         public int AuthorId { get; set; }
         public User Author { get; set; }
