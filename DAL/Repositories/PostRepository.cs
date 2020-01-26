@@ -32,7 +32,13 @@ namespace DAL.Repositories
 
         public Post GetById(int id)
         {
-            var post = _context.Posts.Find(id);
+            var post = _context.Posts.Where(p => p.Id == id)
+                .Include(p => p.Author)
+                .Include(p => p.Comments)
+                    .ThenInclude(c => c.Author)
+                .Include(p => p.Community)
+                .FirstOrDefault();
+
             return post;
         }
 

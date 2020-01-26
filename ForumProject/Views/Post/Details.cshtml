@@ -1,0 +1,28 @@
+﻿@model ForumProject.ViewModels.Post.PostDetailsViewModel
+
+<h1>@Model.Title</h1>
+
+<p>Created by @Model.AuthorName</p>
+<p>on @Model.Created</p>
+
+<div>
+    @Model.Content
+</div>
+
+<div class="list-group">
+    @if (Model.Comments.Any())
+    {
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="list-group-item">
+                <p>Commented by @comment.AuthorName</p>
+                <p>on @comment.Created</p>
+                <div>
+                    @comment.Content
+                </div>
+            </div>
+        }
+    }
+</div>
+
+

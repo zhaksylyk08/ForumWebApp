@@ -8,6 +8,6 @@ namespace BLL.Interfaces
 {
     public interface IPostService : IPostRepository
     {
-
+        
     }
 }
