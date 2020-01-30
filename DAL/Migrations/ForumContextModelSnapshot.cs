@@ -120,7 +120,7 @@ namespace DAL.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CommunityId")
+                    b.Property<int>("CommunityId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -413,7 +413,8 @@ namespace DAL.Migrations
                     b.HasOne("DAL.Models.Community", "Community")
                         .WithMany("Posts")
                         .HasForeignKey("CommunityId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DAL.Models.UserCommunity", b =>

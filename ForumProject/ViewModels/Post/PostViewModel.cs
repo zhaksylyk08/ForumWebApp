@@ -21,5 +21,8 @@ namespace ForumProject.ViewModels.Post
         public string Created { get; set; }
 
         public CommunityViewModel Community { get; set; }
+
+        //public int CommunityId { get; set; }
+        //public string CommunityTitle { get; set; }
     }
 }

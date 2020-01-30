@@ -38,6 +38,14 @@ namespace ForumProject
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ForumContext>(options => options.UseSqlServer(connectionString));
 
+
+            services.AddIdentity<User, IdentityRole<int>>(opts =>
+            {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<ForumContext>();
+
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ICommunityRepository, CommunityRepository>();
@@ -48,16 +56,12 @@ namespace ForumProject
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IPostService, PostService>();
 
-            services.AddIdentity<User, IdentityRole<int>>(opts =>
-            {
-                opts.User.RequireUniqueEmail = true;
-                opts.Password.RequireNonAlphanumeric = false;
-                opts.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<ForumContext>();
+            services.AddTransient<DataSeeder>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataSeeder dataSeeder)
         {
             if (env.IsDevelopment())
             {
@@ -69,6 +73,9 @@ namespace ForumProject
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            dataSeeder.Initialize().GetAwaiter().GetResult();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

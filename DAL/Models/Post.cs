@@ -24,7 +24,7 @@ namespace DAL.Models
 
         public ICollection<Comment> Comments { get; set; }
 
-        public int? CommunityId { get; set; }
+        public int CommunityId { get; set; }
         public Community Community { get; set; }
     }
 }

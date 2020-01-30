@@ -69,7 +69,7 @@ namespace ForumProject.Controllers
             };
 
             _postService.Add(post);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Details", "Post");
         }
 
         [HttpGet]

@@ -1,0 +1,10 @@
+C:\epam_lab\ForumWebApp\DAL\bin\Release\netcoreapp3.1\DAL.deps.json
+C:\epam_lab\ForumWebApp\DAL\bin\Release\netcoreapp3.1\DAL.runtimeconfig.json
+C:\epam_lab\ForumWebApp\DAL\bin\Release\netcoreapp3.1\DAL.runtimeconfig.dev.json
+C:\epam_lab\ForumWebApp\DAL\bin\Release\netcoreapp3.1\DAL.dll
+C:\epam_lab\ForumWebApp\DAL\bin\Release\netcoreapp3.1\DAL.pdb
+C:\epam_lab\ForumWebApp\DAL\obj\Release\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+C:\epam_lab\ForumWebApp\DAL\obj\Release\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+C:\epam_lab\ForumWebApp\DAL\obj\Release\netcoreapp3.1\DAL.AssemblyInfo.cs
+C:\epam_lab\ForumWebApp\DAL\obj\Release\netcoreapp3.1\DAL.dll
+C:\epam_lab\ForumWebApp\DAL\obj\Release\netcoreapp3.1\DAL.pdb

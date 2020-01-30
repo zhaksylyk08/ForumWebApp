@@ -3,6 +3,8 @@
 <h2>Posts</h2>
 
 <div class="list-group">
+    @if(@Model.Posts.Any())
+    {
     @foreach (var post in Model.Posts)
     {
         <a class="list-group-item list-group-item-action" asp-controller="Post" asp-action="Details" asp-route-id="@post.Id">
@@ -13,6 +15,11 @@
             <p>@post.Score scores</p>
             <p>@post.CommentsCount</p>
         </a>
+    }
+    }
+    else
+    {
+        <h2>There are no posts yet!</h2>
     }
 </div>
 

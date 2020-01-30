@@ -127,6 +127,7 @@ namespace ForumProject.Controllers
                 PhotoPath = community.PhotoPath,
                 CategoryId = community.CategoryId
             };
+
             var postList = posts.Select(post => new PostViewModel
             {
                 Id = post.Id,

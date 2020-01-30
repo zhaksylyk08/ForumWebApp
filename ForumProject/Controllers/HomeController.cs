@@ -21,11 +21,12 @@ namespace ForumProject.Controllers
         {
             _postService = postService;
         }
+
         [HttpGet]
         public IActionResult Index()
         {
             var posts = _postService.GetAll();
-
+            
             var postViewModels = posts.Select(post => new PostViewModel
                 {
                     Id = post.Id,
@@ -45,7 +46,12 @@ namespace ForumProject.Controllers
                     }
                 });
 
-            return View(new HomeIndexViewModel { Posts = postViewModels});
+            var viewModel = new HomeIndexViewModel
+            {
+                Posts = postViewModels
+            };
+
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
