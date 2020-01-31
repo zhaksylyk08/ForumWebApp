@@ -213,8 +213,6 @@ C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAn
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\User\Login.cshtml.g.cs
-C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\User\Register.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\BLL.dll
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\BLL.pdb
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Community\Index.cshtml.g.cs
@@ -243,3 +241,8 @@ C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Communi
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Post\Create.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Post\Details.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Role\Create.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\libman.json

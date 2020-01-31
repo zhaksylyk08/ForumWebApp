@@ -14,7 +14,7 @@
     {
         <a class="list-group-item list-group-item-action" asp-controller="Community" asp-action="Details" asp-route-id="@community.Id">
             <span>
-                <img src="@Url.Content("~/images/communities/")/@community.PhotoPath" class="rounded float-left" width="60" height="60"/>
+                <img src="@Url.Content("~/images/communities/")/@community.PhotoPath" class="rounded float-left" width="60" height="60" asp-append-version="true"/>
             </span>
             <h5>@community.Title</h5>
         </a>

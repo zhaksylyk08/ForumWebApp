@@ -6,6 +6,11 @@
     <title>@ViewData["Title"] Forum Project</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
 </head>
 <body>
     <header>
@@ -18,7 +23,23 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Community" asp-action="Index">Communities</a>
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                    Administration
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="nav-link" asp-controller="Community" asp-action="Create">Create Community</a>
+                                    <a class="nav-link" asp-controller="Account" asp-action="Index">Users</a>
+                                </div>
+                            </li>
+                        }
+                    }
                 </ul>
+
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -26,7 +47,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                                 @User.Identity.Name
                             </a>
-                            <form class="dropdown-menu" aria-labelledby="navbarDropdown" method="post" asp-controller="User" asp-action="Logout">
+                            <form class="dropdown-menu" aria-labelledby="navbarDropdown" method="post" asp-controller="Account" asp-action="Logout">
                                 <input class="dropdown-item" type="submit" value="Logout">
                             </form>
                         </li>
@@ -34,10 +55,10 @@
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="User" asp-action="Login">Login</a>
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="User" asp-action="Register">Register</a>
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
                         </li>
                     }
                 </ul>
@@ -52,12 +73,13 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - ForumProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - ForumProject
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

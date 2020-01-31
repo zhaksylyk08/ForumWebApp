@@ -225,10 +225,6 @@
             "System.Linq": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "jQuery": {
-              "target": "Package",
-              "version": "[3.4.1, )"
             }
           },
           "imports": [

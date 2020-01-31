@@ -14,7 +14,6 @@ using ForumProject.ViewModels.Community;
 
 namespace ForumProject.Controllers
 {
-    [AllowAnonymous]
     public class CommunityController : Controller
     {
         private readonly IWebHostEnvironment _appEnvironment;
@@ -65,9 +64,9 @@ namespace ForumProject.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         [Route("/community/create")]
-        [Authorize]
         public IActionResult Create()
         {
             // to choose one of categories in selectlist
@@ -79,9 +78,9 @@ namespace ForumProject.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [Route("/community/create")]
-        [Authorize]
         public async Task<IActionResult> Create(CreateCommunityViewModel viewModel)
         {
             if (ModelState.IsValid)

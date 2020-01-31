@@ -44,7 +44,7 @@ namespace ForumProject.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("", "");
+                    return RedirectToAction("Account", "Index");
                 }
 
                 foreach (var error in result.Errors)
@@ -54,6 +54,11 @@ namespace ForumProject.Controllers
             }
 
             return View(viewModel);
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
         }
     }
 }

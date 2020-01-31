@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ForumProject.ViewModels
 {
@@ -10,10 +7,12 @@ namespace ForumProject.ViewModels
     {
         [Required]
         [Display(Name = "Username")]
+        [Remote(action: "IsUserNameValid", controller: "Account")]
         public string UserName { get; set; }
 
         [Required]
         [EmailAddress]
+        [Remote(action: "IsEmailValid", controller: "Account")]
         public string Email { get; set; }
 
         [Required]

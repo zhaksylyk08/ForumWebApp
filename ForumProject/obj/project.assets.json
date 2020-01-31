@@ -28,9 +28,6 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "jQuery/3.4.1": {
-        "type": "package"
-      },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3213,29 +3210,6 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
-      ]
-    },
-    "jQuery/3.4.1": {
-      "sha512": "vDD5O2nuVN2rF0rTASFSJNM5ef50niEP5HsXDQyXPPZH1rBaAaLtCutHG5wvXOPmrQw+MEZHOcOk9kYmdnL/Xw==",
-      "type": "package",
-      "path": "jquery/3.4.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/Scripts/jquery-3.4.1-vsdoc.js",
-        "Content/Scripts/jquery-3.4.1.js",
-        "Content/Scripts/jquery-3.4.1.min.js",
-        "Content/Scripts/jquery-3.4.1.min.map",
-        "Content/Scripts/jquery-3.4.1.slim.js",
-        "Content/Scripts/jquery-3.4.1.slim.min.js",
-        "Content/Scripts/jquery-3.4.1.slim.min.map",
-        "Tools/common.ps1",
-        "Tools/install.ps1",
-        "Tools/jquery-3.4.1.intellisense.js",
-        "Tools/uninstall.ps1",
-        "jquery.3.4.1.nupkg.sha512",
-        "jquery.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -9607,8 +9581,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.0",
-      "System.Linq >= 4.3.0",
-      "jQuery >= 3.4.1"
+      "System.Linq >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -9688,10 +9661,6 @@
           "System.Linq": {
             "target": "Package",
             "version": "[4.3.0, )"
-          },
-          "jQuery": {
-            "target": "Package",
-            "version": "[3.4.1, )"
           }
         },
         "imports": [
