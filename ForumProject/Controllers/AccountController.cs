@@ -30,18 +30,7 @@ namespace ForumProject.Controllers
         [Route("/users/")]
         public IActionResult Index()
         {
-            var roles = _roleManager.Roles.Where(role => role.Name != "admin");
-            var roleViewModels = roles.Select(role => new RoleViewModel
-            {
-                Id = role.Id,
-                Name = role.Name
-            });
-
-            var viewModel = new UserIndexViewModel
-            {
-                Roles = roleViewModels
-            };
-            return View(viewModel);
+            return View();
         }
 
         [AcceptVerbs("Get", "Post")]

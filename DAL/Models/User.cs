@@ -17,7 +17,5 @@ namespace DAL.Models
 
         public ICollection<Post> Posts { get; set; }
         public ICollection<Comment> Comments { get; set; }
-        public ICollection<Community> CreatedCommunities { get; set; }
-        public virtual ICollection<UserCommunity> SubscribedCommunities { get; set; }
     }
 }

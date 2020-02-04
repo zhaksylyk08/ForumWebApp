@@ -34,11 +34,10 @@ namespace ForumProject.Controllers
 
         [HttpGet]
         [Authorize]
-        [Route("/post/create/{id}")]
-        public IActionResult Create(int id)
+        [Route("/post/create/{communityId}")]
+        public IActionResult Create(int communityId)
         {
-            // id is for Community.Id
-            var community = _communityService.GetById(id);
+            var community = _communityService.GetById(communityId);
 
             var viewModel = new CreatePostViewModel
             {
@@ -69,7 +68,7 @@ namespace ForumProject.Controllers
             };
 
             _postService.Add(post);
-            return RedirectToAction("Details", "Post");
+            return RedirectToAction("Details", "Post", new { id = post.Id});
         }
 
         [HttpGet]

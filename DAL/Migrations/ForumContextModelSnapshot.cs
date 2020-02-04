@@ -132,7 +132,9 @@ namespace DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Score")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -143,7 +145,9 @@ namespace DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Views")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 
@@ -227,21 +231,6 @@ namespace DAL.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("DAL.Models.UserCommunity", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CommunityId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "CommunityId");
-
-                    b.HasIndex("CommunityId");
-
-                    b.ToTable("UserCommunities");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
@@ -398,7 +387,7 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("DAL.Models.User", "Creator")
-                        .WithMany("CreatedCommunities")
+                        .WithMany()
                         .HasForeignKey("CreatorId");
                 });
 
@@ -413,21 +402,6 @@ namespace DAL.Migrations
                     b.HasOne("DAL.Models.Community", "Community")
                         .WithMany("Posts")
                         .HasForeignKey("CommunityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DAL.Models.UserCommunity", b =>
-                {
-                    b.HasOne("DAL.Models.Community", "Community")
-                        .WithMany("Members")
-                        .HasForeignKey("CommunityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("DAL.Models.User", "User")
-                        .WithMany("SubscribedCommunities")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

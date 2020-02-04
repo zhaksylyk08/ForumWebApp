@@ -101,11 +101,7 @@ namespace ForumProject.Controllers
                 };
                 // to separate image storage logic
                 _communityService.CreateCommunity(community, viewModel.Photo, _appEnvironment.WebRootPath);
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Invalid login or(and) password");
+                return RedirectToAction("Details", "Community", new { id = community.Id});
             }
 
             return View(viewModel);

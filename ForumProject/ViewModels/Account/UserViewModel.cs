@@ -13,5 +13,6 @@ namespace ForumProject.ViewModels.Account
 
         public int PostsCount { get; set; }
         public int CommentsCount { get; set; }
+        public int OveralPostsScore { get; set; }
     }
 }

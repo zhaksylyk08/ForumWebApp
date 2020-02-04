@@ -20,8 +20,6 @@ namespace DAL.Models
         public int? CreatorId { get; set; }
         public User Creator { get; set; }
 
-        public virtual ICollection<UserCommunity> Members { get; set; }
-
         public ICollection<Post> Posts { get; set; }
 
         public int CategoryId { get; set; }

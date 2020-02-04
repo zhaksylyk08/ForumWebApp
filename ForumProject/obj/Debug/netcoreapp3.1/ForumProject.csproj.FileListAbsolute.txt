@@ -244,5 +244,8 @@ C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Role\Cr
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
-C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\bin\Debug\netcoreapp3.1\libman.json
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Role\Edit.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditUsersInRole.cshtml.g.cs

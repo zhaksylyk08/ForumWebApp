@@ -1,0 +1,51 @@
+﻿@using ForumProject.ViewModels
+@model List<UserRoleViewModel>
+
+@{
+    var roleId = ViewBag.roleId;
+}
+
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2>Add or remove users from the role</h2>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-primary">
+                        <th scope="col"></th>
+                        <th scope="col">Number of Posts</th>
+                        <th scope="col">Number of Comments</th>
+                        <th scope="col">Overal sum of Posts Score</th>
+                    </tr>
+                </thead>
+                @foreach (var user in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input asp-for="@user.IsSelected" class="form-check-input" />
+                                <label class="form-check-label">
+                                    @user.UserName
+                                </label>
+                            </td>
+                            <td>@user.PostsCount</td>
+                            <td>@user.CommentsCount</td>
+                            <td>@user.OveralPostsScore</td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+            </div>
+
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-outline-success" style="width:auto;"/>
+            <a asp-controller="Role" asp-action="Edit" asp-route-id="@roleId" class="btn btn-outline-danger">
+                Cancel
+            </a>
+        </div>
+    </div>
+</form>
+

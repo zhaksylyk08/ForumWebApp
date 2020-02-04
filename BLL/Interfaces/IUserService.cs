@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DAL.Models;
+using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
     public interface IUserService
     {
-        bool VerifyUserName();
+        Task<int> GetOveralPostsScoreAsync(int userId);
+        Task<int> GetPostsCountAsync(int userId);
+        Task<int> GetCommentsCountAsync(int userId);
     }
 }
