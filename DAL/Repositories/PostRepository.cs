@@ -1,9 +1,7 @@
 ﻿using DAL.Interfaces;
 using DAL.Models;
 using DAL.Data;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +19,12 @@ namespace DAL.Repositories
         public void Add(Post post)
         {
             _context.Add(post);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Post post)
+        {
+            _context.Posts.Remove(post);
             _context.SaveChanges();
         }
 
@@ -51,6 +55,12 @@ namespace DAL.Repositories
         {
             var result = _context.Posts.Where(p => p.CommunityId == id).ToList();
             return result;
+        }
+
+        public void Update(Post post)
+        {
+            _context.Posts.Update(post);
+            _context.SaveChanges();
         }
     }
 }

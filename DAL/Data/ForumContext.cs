@@ -20,14 +20,6 @@ namespace DAL.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Post>()
-                .Property(p => p.Score)
-                .HasDefaultValue(0);
-
-            modelBuilder.Entity<Post>()
-                .Property(p => p.Views)
-                .HasDefaultValue(0);
-
             modelBuilder.Entity<User>()
                 .HasMany<Post>(u => u.Posts)
                 .WithOne(p => p.Author)

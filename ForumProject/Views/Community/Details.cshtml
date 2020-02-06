@@ -2,9 +2,17 @@
 
 <h1>Welcome to the @Model.Community.Title!</h1>
 
-<a asp-controller="Post" asp-action="Create" asp-route-communityId="@Model.Community.Id" class="btn btn-info">
-    Create the post
-</a>
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-controller="Post" asp-action="Create" asp-route-communityId="@Model.Community.Id" class="btn btn-info">
+        Create the post
+    </a>
+}
+
+else
+{
+    <p style="color: red;">You have to login to create post on community!</p>
+}
 
 <div class="list-group">
     @if (@Model.Posts.Any())
@@ -14,9 +22,7 @@
             <a class="list-group-item list-group-item-action" asp-controller="Post" asp-action="Details" asp-route-id="@post.Id">
                 <h2 style="color:cornflowerblue;">@post.Title</h2>
                 <p>Posted by @post.AuthorName on @post.Created</p>
-                <p>@post.Views views</p>
-                <p>@post.Score scores</p>
-                <p>@post.CommentsCount</p>
+                <p>@post.CommentsCount comments</p>
             </a>
         }
     }

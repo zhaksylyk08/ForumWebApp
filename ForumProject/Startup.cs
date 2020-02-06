@@ -56,6 +56,7 @@ namespace ForumProject
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICommentService, CommentService>();
 
             services.AddTransient<DataSeeder>();
 

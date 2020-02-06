@@ -7,6 +7,6 @@ namespace DAL.Interfaces
 {
     public interface ICommentRepository
     {
-
+        void Add(Comment comment);
     }
 }

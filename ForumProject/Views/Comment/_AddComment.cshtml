@@ -1,0 +1,20 @@
+﻿@model ForumProject.ViewModels.Comment.CommentCreateViewModel
+
+
+<div class="row">
+    <form method="post" class="new-comment">
+        <div class="form-group">
+
+            <textarea asp-for="Content" placeholder="Leave the comment..."
+                      rows="10" , cols="50">
+                    </textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+
+        </div>
+        <input type="hidden" asp-for="PostId" value="@ViewData["postId"]"/>
+
+        <input type="submit" class="add-comment btn btn-outline-success" value="Comment"
+               asp-controller="Comment" asp-action="Create"/>
+    </form>
+</div>
+

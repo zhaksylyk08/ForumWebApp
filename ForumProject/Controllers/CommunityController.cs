@@ -129,8 +129,6 @@ namespace ForumProject.Controllers
                 Title = post.Title,
                 AuthorId = post.AuthorId,
                 Created = post.Created.ToString(),
-                Views = post.Views,
-                Score = post.Score,
                 CommentsCount = post.Comments.Count(),
                 Community = communityViewModel
             });

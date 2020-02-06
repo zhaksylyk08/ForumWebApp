@@ -15,9 +15,7 @@ namespace DAL.Models
         [StringLength(1000)]
         public string Content { get; set; }
 
-        public int Views { get; set; }
-
-        public int Score { get; set; }
+        public bool IsEditedByModerator { get; set; }
 
         public int AuthorId { get; set; }
         public User Author { get; set; }

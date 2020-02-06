@@ -68,8 +68,7 @@ namespace ForumProject.Controllers
                     Id = user.Id,
                     UserName = user.UserName,
                     PostsCount = await _userService.GetPostsCountAsync(user.Id),
-                    CommentsCount = await _userService.GetCommentsCountAsync(user.Id),
-                    OveralPostsScore = await _userService.GetOveralPostsScoreAsync(user.Id)
+                    CommentsCount = await _userService.GetCommentsCountAsync(user.Id)
                 };
 
                 if (await _userManager.IsInRoleAsync(user, role.Name))
@@ -85,6 +84,31 @@ namespace ForumProject.Controllers
             }
             
             return View(viewModel);
+        }
+
+        [Route("/role/users/edit/{roleId}")]
+        [HttpPost]
+        public async Task<IActionResult> EditUsersInRole(List<UserRoleViewModel> viewModel,
+            int roleId)
+        {
+            var role = await _roleManager.FindByIdAsync(roleId.ToString());
+
+            foreach (var model in viewModel)
+            {
+                var user = await _userManager.FindByIdAsync(model.Id.ToString());
+                var result = await _userManager.IsInRoleAsync(user, role.Name);
+
+                if (model.IsSelected && !result)
+                {
+                    await _userManager.AddToRoleAsync(user, role.Name);
+                }
+                else if(!model.IsSelected && result)
+                {
+                    await _userManager.RemoveFromRoleAsync(user, role.Name);
+                }
+            }
+
+            return RedirectToAction("Edit", "Role", new { id = roleId });
         }
     }
 }

@@ -1,4 +1,23 @@
-﻿@model ForumProject.ViewModels.Post.PostDetailsViewModel
+﻿@using ForumProject.ViewModels.Post
+@model PostDetailsViewModel
+
+@if (User.IsInRole("moderator"))
+{
+    <form method="post">
+        <input type="submit" value="Delete the post"
+               asp-controller="Post" asp-action="Delete" asp-route-id="@Model.Id"
+               class="btn btn-outline-danger" />
+    </form>
+
+    <a asp-controller="Post" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary">
+        Edit the post
+    </a>
+}
+
+@if (Model.IsEditedByModerator)
+{
+    <p style="color: green;">The post was edited by moderator</p>
+}
 
 <h1>@Model.Title</h1>
 
@@ -8,6 +27,23 @@
 <div>
     @Model.Content
 </div>
+<hr>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="addCommentContainer">
+        @await Html.PartialAsync("~/Views/Comment/_AddComment.cshtml",
+                    new ForumProject.ViewModels.Comment.CommentCreateViewModel(),
+                    new ViewDataDictionary(ViewData)
+                    {
+                {"postId", Model.Id}
+                    })
+    </div>
+}
+else
+{
+    <p style="color: red;">You have to login to leave the comment!</p>
+}
 
 <div class="list-group">
     @if (Model.Comments.Any())
@@ -25,8 +61,17 @@
     }
     else
     {
-        <h2>There are no comments</h2>
+        <h3>There are no comments</h3>
     }
 </div>
 
+@section Scripts{
+    <script src="~/js/comment.js"></script>
+    <script>
+        var urls =
+        {
+            updatePage: "@Url.Action("Details", "Post", new { id = Model.Id})"
+        };
+    </script>
+}
 

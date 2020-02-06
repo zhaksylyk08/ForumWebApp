@@ -18,23 +18,6 @@ namespace BLL.Services
             _userManager = userManager;
         }
 
-
-        public async Task<int> GetOveralPostsScoreAsync(int userId)
-        {
-            var user = await _userManager.Users
-                .Include(u => u.Posts)
-                .SingleAsync(u => u.Id == userId);
-
-            var postsScoreSum = 0;
-
-            foreach (var post in user.Posts)
-            {
-                postsScoreSum += post.Score;
-            }
-
-            return postsScoreSum;
-        }
-
         public async Task<int> GetCommentsCountAsync(int userId)
         {
             var user = await _userManager.Users

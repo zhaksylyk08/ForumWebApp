@@ -5,7 +5,6 @@ namespace BLL.Interfaces
 {
     public interface IUserService
     {
-        Task<int> GetOveralPostsScoreAsync(int userId);
         Task<int> GetPostsCountAsync(int userId);
         Task<int> GetCommentsCountAsync(int userId);
     }

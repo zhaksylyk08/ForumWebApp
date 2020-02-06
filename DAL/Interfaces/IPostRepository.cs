@@ -10,6 +10,8 @@ namespace DAL.Interfaces
         IEnumerable<Post> GetAll();
         Post GetById(int id);
         void Add(Post post);
+        void Delete(Post post);
+        void Update(Post post);
 
         IEnumerable<Post> GetPostsByCommunity(int id);
     }

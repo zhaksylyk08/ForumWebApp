@@ -34,8 +34,7 @@ namespace ForumProject.Controllers
                     AuthorId = post.Author.Id,
                     AuthorName = post.Author.DisplayName,
                     Created = post.Created.ToString(),
-                    Views = post.Views,
-                    Score = post.Score,
+                    CommentsCount = post.Comments.Count(),
                     Community = new CommunityViewModel
                     {
                         Id = post.Community.Id,

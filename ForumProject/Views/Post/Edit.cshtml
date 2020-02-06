@@ -1,0 +1,25 @@
+﻿@model ForumProject.ViewModels.Post.PostEditViewModel
+
+<h1>@Model.Title</h1>
+
+<p>Created by @Model.AuthorName</p>
+<p>on @Model.Created</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="Post" asp-action="Edit">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" value ="@Model.Title"class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content"></label>
+                <textarea asp-for="Content" value ="@Model.Content"class="form-control" rows="20" cols="50"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Edit</button>
+        </form>
+    </div>
+</div>
+

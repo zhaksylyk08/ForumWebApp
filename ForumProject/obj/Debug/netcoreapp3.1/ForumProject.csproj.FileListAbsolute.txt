@@ -249,3 +249,5 @@ C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Admin\I
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Role\Edit.cshtml.g.cs
 C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditUsersInRole.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Post\Edit.cshtml.g.cs
+C:\epam_lab\ForumWebApp\ForumProject\obj\Debug\netcoreapp3.1\Razor\Views\Comment\_AddComment.cshtml.g.cs

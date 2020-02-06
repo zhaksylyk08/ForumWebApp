@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +11,6 @@ using DAL.Models;
 
 namespace ForumProject.Controllers
 {
-    [AllowAnonymous]
     public class PostController : Controller
     {
         private readonly IPostService _postService;
@@ -93,10 +91,66 @@ namespace ForumProject.Controllers
                 AuthorName = post.Author.DisplayName,
                 Created = post.Created,
                 Content = post.Content,
+                IsEditedByModerator = post.IsEditedByModerator,
                 Comments = comments
             };
 
             return View(viewModel);
+        }
+
+        [Authorize(Roles="admin, moderator")]
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var post = _postService.GetById(id);
+            if (post == null)
+            {
+                ViewBag.ErrorMessage = "Post is not found!";
+                return View("NotFound");
+            }
+
+            _postService.Delete(post);
+            return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize(Roles="admin, moderator")]
+        [HttpGet]
+        [Route("post/edit/{id}")]
+        public IActionResult Edit(int id)
+        {
+            var post = _postService.GetById(id);
+            if (post == null)
+            {
+                ViewBag.Message = "Post is not found";
+                return View("NotFound");
+            }
+
+            var viewModel = new PostEditViewModel
+            {
+                Id = post.Id,
+                Title = post.Title,
+                AuthorName = post.Author.DisplayName,
+                Created = post.Created,
+                Content = post.Content
+            };
+
+            return View(viewModel);
+        }
+
+        [Authorize(Roles = "admin, moderator")]
+        [HttpPost]
+        [Route("post/edit/{id}")]
+        public IActionResult Edit(PostEditViewModel viewModel, int id)
+        {
+            var post = _postService.GetById(id);
+
+            post.Title = viewModel.Title;
+            post.Content = viewModel.Content;
+            post.IsEditedByModerator = true;
+
+            _postService.Update(post);
+
+            return RedirectToAction("Details", "Post", new { id = id });
         }
     }
 }
