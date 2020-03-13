@@ -4,7 +4,6 @@ Web App created using ASP.NET Core MVC, Identity Core, EF Core
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* 
 
 ## General info
 The topic of project is discussion forum. 
@@ -16,7 +15,7 @@ Implemented use cases:
 * Working with forum users: Admin can assign roles to users 
 
 Mulilayered architecture:
-* Presentation Layer
+* Presentation Layer - ASP.NET Core MVC Project
 * Business Logic Layer
 * Data Access Layer
 
